@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>JosePortfolio SimpleForm</title>
+        <style>
+            /* th,td{
+                border: 1px black solid
+            } */
+            table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td,th{
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+        </style>
+    </head>
+    <body>
+        <h1>StudentPage</h1>
+        {% if stud %}
+            <h1>ShowData</h1>
+            <table>
+                <tr>
+                    <th style="text-align:center">Name</th>
+                    <th style="text-align:center">Email</th>
+                </tr>
+                {% for st in stud %}
+                <tr>
+                    <td>{{st.name}}</td>
+                    <td>{{st.email}}</td>
+                </tr>
+                
+                
+            {% endfor %}
+            </table>
+           
+        {% else %}
+            <h1>No Data</h1>
+        {% endif %}
+    </body>
+</html>
